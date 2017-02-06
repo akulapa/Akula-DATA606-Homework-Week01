@@ -1,0 +1,187 @@
+---
+title: "Akula-DATA606-Week01-Homework"
+author: "Pavan Akula"
+date: "February 4, 2017"
+output: html_document
+---
+
+1.8 Smoking habits of UK residents.
+```{r load-data, eval=TRUE}
+library(readr)
+smoking <- read_csv("smoking.csv")
+```
+
+Q 1: What does each row of the data matrix represent?
+
+A. Each row contain information anout UK resident that include gender, age, marital status, highest qualification, nationality, ethnicity, gross income, region, smoking habits, type of cigarettes used and number of cigarettes smoked during weekday and weekend. 
+```{r smoking-data, eval=TRUE}
+smoking
+```
+
+Q 2. How many participants were included in the survey?
+
+A. There are 1691 participants in the survey.
+
+```{r dim-smoke, eval=TRUE}
+dim(smoking)
+```
+
+Q 3. Indicate whether each variable in the study is numerical or categorical. If numerical, identify
+as continuous or discrete. If categorical, indicate if the variable is ordinal.
+
+A. Following is the data type of each variable.
+
+```{r str-smoke, eval=TRUE}
+str(smoking)
+```
+1. Variable gender is categorical. This is not ordinal variable because there is no intrinsic ordering for the variable.
+2. Variable age is numerical. Variable can be part of arithmetic operations including addition, subtraction and average. It can have wide range of positive values. Hence it is continuous variable.
+3. Variable maritalStatus is categorical. This is not ordinal variable because there is no intrinsic ordering for the variable. It is nominal variable.
+4. Variable highestQualification is categorical. This is a ordinal variable because it can ordered from (No Qualification, Higher/Sub Degree, Degree).
+5. Variable nationality is categorical. This is not ordinal variable because there is no intrinsic ordering for the variable. It is nominal variable.
+6. Variable ethnicity is categorical. This is not ordinal variable because there is no intrinsic ordering for the variable. It is nominal variable.
+7. Variable grossIncome is numerical. Variable can be part of arithmetic operations including addition, subtraction and average. It can have wide range of values. Hence it is continuous variable.
+8. Variable region is categorical. This is not ordinal variable because there is no intrinsic ordering for the variable. It is nominal variable.
+9. Variable smoke is categorical. This is not ordinal variable because there is no intrinsic ordering for the variable. It is nominal variable.
+10. Variable amtWeekends is numerical. Variable can be part of arithmetic operations including addition, subtraction and average. It represents count of cigarettes smoked during weekends. Hence it is discrete variable.
+11. Variable amtWeekdays is numerical. Variable can be part of arithmetic operations including addition, subtraction and average. It represents count of cigarettes smoked during weekdays. Hence it is discrete variable.
+12. Variable type is categorical. This is not ordinal variable because there is no intrinsic ordering for the variable. It is nominal variable.
+
+1.10 Cheaters, scope of inference
+
+Q 1: Identify the population of interest and the sample in this study.
+
+A: Population of interest is all the childern between ages 5 and 15 that include boys and girls. Sample size of 160 childern are seleccted. They were asked to toss a fair coin in private and report the outcome black or white. They were also informed child who reports white would be rewarded. Each child was ramdomly assigned to one of the two groups 
+Instruction group: This group was given explict instructions not to cheat.
+No Instruction group: This group was not given any explict instructions not to cheat.
+
+Q 2: Comment on whether or not the results of the study can be generalized to the population, and if the findings of the study can be used to establish causal relationships.
+
+A. After reading study conducted by 
+
+Alessandro Bucciol and Marco Piovesan, "Luck or cheating? A field experiment on honesty with children".
+
+I agree with researchers, if opportunity permits adults and/or children incline towards cheating. Since observation establishes cheating develops from young age and can be avoided by remainding, it is fair say if general population is remainded cheating can be avoided to great extent irrespective of age.
+
+
+1.28 Reading the paper
+
+Q 1: Based on this study, can we conclude that smoking causes dementia later in life? Explain your reasoning.
+
+A: NY Times article "Risks: Smokers Found More Prone to Dementia" was written By Roni Caryn Rabinoct based on study conducted by Dr. Rachel A. Whitmer, an epidemiologist with the Kaiser Permanente Division of Research. Based on the study it was observed that smoker has high chance of developing dementia later in life regardless of age and family history. We cannot conclude smoking causes dementia because of other confounding variables including age and family history. 
+
+Q 2: A friend of yours who read the article says, "The study shows that sleep disorders lead to bullying in school children." Is this statement justified? If not, how best can you describe the
+conclusion that can be drawn from this study?
+
+A: NY Times article "The School Bully Is Sleepy" was written based on study conducted by Louise O'Brien, assistant professor of sleep medicine at the University of Michigan. Study simply shows an association between sleep problems and bad behavior and doesn't prove that sleep problems cause bullying. 
+
+In conclusion I think that impaired sleep does affect areas of the brain. If sleep is disrupted, then decision-making capabilities are impaired which will lead to behavioral issues. I do not agree with my friend that bullying is effect of sleep disorder.
+
+
+1.36 Exercise and mental health.
+
+Q 1: What type of study is this?
+
+A: This is observational prospective study using stratified sampling. This study will be focusing on effect of exercise on mental health.
+
+Q 2: What are the treatment and control groups in this study?
+
+A: Treatment group: Subjects instructed to exercise twice a week.
+Control group: Subjects instructed not to exercise.
+
+Q 3: Does this study make use of blocking? If so, what is the blocking variable?
+
+A: Yes study does use blocking. Blocking variable is age of the subject.
+
+Q 4: Does this study make use of blinding?
+
+A: Study does not use blinding. Subjects are clearly give instructions.
+
+Q 5: Comment on whether or not the results of the study can be used to establish a causal relationship between exercise and mental health, and indicate whether or not the conclusions can be generalized to the population at large.
+
+A: This is an observational study with many confounding variables not being measured. One such variable is diety habits. Hence study cannot easily be used to make causal conclusions. Also conclusions cannot be generalized to the population at large because study uses blocking. Subjects in the study were between the age group of 18 and 55.
+
+Q 6: Suppose you are given the task of determining if this proposed study should get funding. Would you have any reservations about the study proposal?
+
+A: Yes. If I was tasked to determine should the study get funding I would like to see study includes much broader age group. Greater than 55.
+
+1.48 Stats scores. Below are the final exam scores of twenty introductory statistics students.
+
+57, 66, 69, 71, 72, 73, 74, 77, 78, 78, 79, 79, 81, 81, 82, 83, 83, 88, 89, 94
+
+Q 1: Create a box plot of the distribution of these scores.
+
+A: Following creates vector marks. 
+```{r student-marks, eval=TRUE}
+marks<-c(57, 66, 69, 71, 72, 73, 74, 77, 78, 78, 79, 79, 81, 81, 82, 83, 83, 88, 89, 94)
+summary(marks)
+boxplot(marks)
+```
+
+1.50 Mix-and-match. Describe the distribution in the histograms below and match them to
+the box plots.
+
+Histogram (a) has median 60 and distribution is right skewed. It matches to boxplot (2).
+Histogram (b) has median 50 and distribution is symmetric. It matches to boxplot (3).
+Histogram (c) has median less than 2 and distribution is right skewed. It matches to boxplot (1).
+
+
+1.56 Distributions and appropriate statistics, Part II
+
+Q 1: Housing prices in a country where 25% of the houses cost below $350,000, 50% of the houses cost below $450,000, 75% of the houses cost below $1,000,000 and there are a meaningful number of houses that cost more than $6,000,000.
+
+A: Distribution would be right skewed.
+
+Q 2: Housing prices in a country where 25% of the houses cost below $300,000, 50% of the houses cost below $600,000, 75% of the houses cost below $900,000 and very few houses that cost more than $1,200,000.
+
+A: Distribution woube be symmetric.
+
+Q 3: Number of alcoholic drinks consumed by college students in a given week. Assume that most of these students don't drink since they are under 21 years old, and only a few drink excessively.
+
+A: Distribution would be right skewed.
+
+Q 4: Annual salaries of the employees at a Fortune 500 company where only a few high level executives earn much higher salaries than all the other employees.
+
+A: Distribution would be right skewed.
+
+1.70 Heart transplants.
+
+Q 1: Based on the mosaic plot, is survival independent of whether or not the patient got a transplant? Explain your reasoning.
+
+A: Based on mosaic plot percentage of patients who received heart transplant survived longer. Hence survival and heart transplant aren't independent. 
+
+Q 2: What do the box plots below suggest about the efficacy (ectiveness) of the heart transplant treatment.
+
+A: Box plot suggests patients survival has increased due to heart transplant treatment. Survival is evenly distributed with few outliers who survived more than 1500 days after treatment. Distribution is right skewed.
+
+Q 3: What proportion of patients in the treatment group and what proportion of patients in the control group died?
+
+A: 88% of patients died in control group. 66% of patients died in treatment group.
+
+Q 4: What are the claims being tested?
+
+A: H~0~ = Heart transplant treatment has no effect on patient survival rate.
+
+H~A~ = Heart transplant treatment increases patient survial rate
+
+Q 5: We write alive on *these* cards representing patients who were alive at the end of the study, and dead on *these* cards representing patients who were not. Then, we shuffle these cards and split them into two groups:
+one group of size *69 patients* representing treatment, and another group of size *34 patients* representing control. We calculate the difference between the proportion of dead cards in the treatment and control groups (treatment - control) and record this value. We repeat this 100 times to build a distribution centered at *zero*. Lastly, we calculate the fraction of simulations where the simulated differences in proportions are *higher than observed differences in proportions*. If this fraction is low, we conclude that it is unlikely to have observed such an outcome by chance and that the null hypothesis should be rejected in favor of the alternative.
+
+Q 6: What do the simulation results shown below suggest about the effectiveness of the transplant program?
+
+A: According the study, survival rate of patients who received heart transplant treatment is 34.79
+```{r treatment-survial, eval=TRUE}
+(24/69)*100
+```
+survival rate of patients who did not receive heart transplant treatment is 11.77
+```{r no-treatment, eval=TRUE}
+(4/34)*100
+```
+
+differences in survival proportions according the study are 23.02, which tells there is 23.02 percent of higher chance of patient survival after heart transplant treatment. 
+```{r diff-sur, eval=TRUE}
+34.78-11.76
+```
+
+According to the sumulation results it appears that difference in survival rate of at least 23% after treatment would only happen about 3% of the time. Such low percentage indicates null hypothesis is true. Heart transplant treatment has no effect on patient survival rate.
+
